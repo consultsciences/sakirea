@@ -13,6 +13,20 @@ Reference implementations live in the four `consultsciences` apps that already
 use this contract: `clinical-dojo` (node:http), `pharmaiq-evidence` (Express/TS),
 `catalystiq` and `regsignal` (Express/ESM).
 
+## Status
+
+All four apps are integrated against this contract on `main`:
+
+| App | Repo | Stack | Client | Route wiring | Contract tests |
+| --- | --- | --- | --- | --- | --- |
+| clinical-dojo | [consultsciences/Aifor](https://github.com/consultsciences/Aifor) | node:http routers | `src/sakirea.mjs` | `src/app.mjs` (shared by fixture + pg servers) | `tests/sakirea.test.mjs`, `tests/sakirea-disabled.test.mjs` |
+| pharmaiq-evidence | [consultsciences/pharmaiq-evidence](https://github.com/consultsciences/pharmaiq-evidence) | Express + TypeScript | `sakirea.ts` | `server.ts` | `evidence/research.test.ts`, `evidence/research.disabled.test.ts` |
+| catalystiq | [consultsciences/catalystiq](https://github.com/consultsciences/catalystiq) | Express (ESM) | `lib/sakirea.mjs` | `server.mjs` | `tests/api/research.mjs` |
+| regsignal | [consultsciences/regsignal](https://github.com/consultsciences/regsignal) | Express (ESM) | `lib/sakirea.mjs` | `server.mjs` | `tests/api/research.mjs` |
+
+Each app exposes the same five routes, the same `{error:{code,message}}` failure
+shape, and the same five environment variables above.
+
 ## Environment
 
 | Variable | Default | Meaning |
