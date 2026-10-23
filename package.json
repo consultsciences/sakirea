@@ -1,0 +1,26 @@
+{
+  "name": "sakirea",
+  "version": "0.1.0",
+  "description": "From-scratch TypeScript reimplementation of the engines of the open-source AI research agent Feynman.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "bin": {
+    "sakirea": "bin/sakirea.mjs"
+  },
+  "scripts": {
+    "test": "node --test --test-isolation=none \"tests/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "research-agent",
+    "literature-review",
+    "science-database-search",
+    "provenance"
+  ],
+  "devDependencies": {
+    "typescript": "^5.8"
+  }
+}
